@@ -8,6 +8,7 @@
 	--border: #eef2f5;
 	--radius:12px;
 	--max-width:900px;
+	--hover-bg: rgba(255, 221, 230, 0.5); /* nuevo color de fondo en hover */
 	font-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 *{box-sizing:border-box}
@@ -51,9 +52,9 @@ body{
 /* Navigation */
 .nav a{
 	text-decoration:none;color:var(--muted);padding:0.5rem 0.6rem;border-radius:8px;
-	transition:background .18s, color .18s;
+	transition:background .3s ease, color .3s ease; /* transición más suave */
 }
-.nav a:hover{background:rgba(15,23,42,0.04);color:#0f172a}
+.nav a:hover{background:var(--hover-bg);color:#0f172a; /* nuevo efecto hover */}
 
 /* Cards */
 .card{
@@ -62,7 +63,11 @@ body{
 	padding:1.25rem;
 	margin-top:1.25rem;
 	border-radius:var(--radius);
-	box-shadow:0 6px 20px rgba(15,23,42,0.03);
+	box-shadow:0 6px 20px rgba(15,23,42,0.1); /* sombra más pronunciada */
+	transition: transform .2s; /* efecto de transformación */
+}
+.card:hover {
+	transform: translateY(-5px); /* efecto de elevación al pasar el mouse */
 }
 .card h2{margin-top:0;margin-bottom:.5rem}
 .skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.5rem;list-style:none;padding:0;margin:0}
